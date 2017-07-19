@@ -1,0 +1,25 @@
+{
+  "name": "instanews",
+  "version": "1.0.0",
+  "description": "one page responsive website using NYT API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JelloPrint/RedAcademy/tree/master/project-02"
+  },
+  "author": "Matthew Cuthbert",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "gulp-eslint": "^4.0.0"
+  }
+}
