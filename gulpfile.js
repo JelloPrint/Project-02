@@ -34,7 +34,7 @@ gulp.task('browser-sync', function(){
 }); // end of Browser sync init
 
 
-    gulp.watch(['build/js/*.js', 'index.html', 'CSS/*.css']).on('change', browserSync.reload);
+    gulp.watch(['build/js/*.js', 'index.html', 'sass/*.scss']).on('change', browserSync.reload);
 });
 
 
