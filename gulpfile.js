@@ -4,13 +4,18 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     watch = require('gulp-watch'),
     browserSync = require('browser-sync').create(),
-    eslint = require('gulp-eslint');
+    eslint = require('gulp-eslint'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano'),
+    rename = require('gulp-rename'),
+    prettyError = require('gulp-prettyerror');
 
 
 // --------- Gulp Tasks Below ----------------------------------------
 
 // Gulp Scripts Task
-gulp.task('scripts', function(){
+gulp.task('scripts', ['lint'], function(){
     // place code for your default task here
   gulp.src('./JavaScript/*.js')
     .pipe(uglify()) //call the uglify function on the files
@@ -35,26 +40,34 @@ gulp.task('browser-sync', function(){
 
 // Gulp Watch Task
 gulp.task('watch', function(){
+    gulp.watch('sass/**/*.scss', ['sass']);
     gulp.watch('js/*.js', ['scripts']);
 
 } );
 
 // Gulp Eslint Task
-gulp.task('lint', () => {
-    // ESLint ignores files with "node_modules" paths. 
-    // So, it's best to have gulp ignore the directory as well. 
-    // Also, Be sure to return the stream from the task; 
-    // Otherwise, the task may end before the stream has finished. 
-    return gulp.src(['**/*.js','!node_modules/**'])
-        // eslint() attaches the lint output to the "eslint" property 
-        // of the file object so it can be used by other modules. 
+gulp.task('lint', function() {
+
+    gulp.src(['./js/*.js']) 
+    // Also need to use it here..
+    //.pipe(prettyError())
         .pipe(eslint())
-        // eslint.format() outputs the lint results to the console. 
-        // Alternatively use eslint.formatEach() (see Docs). 
         .pipe(eslint.format())
-        // To have the process exit with an error code (1) on 
-        // lint error, return the stream and pipe to failAfterError last. 
-        .pipe(eslint.failAfterError());
+        .pipe(eslint.failAfterError())
+});
+
+// Gulp Sass Task
+gulp.task('sass', function() {
+   gulp.src('./sass/mainstyle.scss')
+      .pipe(prettyError())
+      .pipe(sass())
+      .pipe(autoprefixer({
+         browsers: ['last 2 versions']
+      }))
+      .pipe(gulp.dest('./build/css'))
+      .pipe(cssnano())
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('./build/css'));
 });
  
 
@@ -63,4 +76,4 @@ gulp.task('default', ['lint'], function () {
 });
 
 // Gulp Default Task
-gulp.task('default', ['watch', 'browser-sync']);
+gulp.task('default', ['watch', 'browser-sync', 'scripts', 'lint', 'sass' ]);

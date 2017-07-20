@@ -1,8 +1,8 @@
 # Ignore OS files #
 # =============== #
 .DS_Store
-.vscode
 .DS_Store?
+.vscode
 ._*
 .Spotlight-V100
 .Trashes

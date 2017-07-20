@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+  font-family: 'open_sanslight';
+  color: white; }
+
+h1 {
+  font-size: 24; }
+
+h3 {
+  color: lightgray;
+  letter-spacing: .5px; }
+
+.button {
+  text-align: center;
+  color: black;
+  background-color: white; }
