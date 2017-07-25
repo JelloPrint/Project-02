@@ -40,7 +40,7 @@ gulp.task('browser-sync', function(){
 
 // Gulp Watch Task
 gulp.task('watch', function(){
-    gulp.watch('sass/**/*.scss', ['sass']);
+    gulp.watch('sass/*.scss', ['sass']);
     gulp.watch('js/*.js', ['scripts']);
 
 } );
@@ -58,7 +58,7 @@ gulp.task('lint', function() {
 
 // Gulp Sass Task
 gulp.task('sass', function() {
-   gulp.src('./sass/mainstyle.scss')
+   gulp.src('./sass/*.scss')
       .pipe(prettyError())
       .pipe(sass())
       .pipe(autoprefixer({

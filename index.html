@@ -1,4 +1,4 @@
-<!Doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -7,30 +7,41 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>INSTANEWS</title>
-    <link rel="stylesheet" href="sass/mainstyle.scss">
-    <link rel="stylesheet" href="css/fonts/fontstylesheet.css">
-    <link rel="stylesheet" href="javascript/main.js">
+    <link rel="stylesheet" href="build/css/style.min.css">
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
+
   <body>
+      <div class="wrapper">
+         <header>
+            <section class='logo-section container'>
+               <img src='css/images/nyt-logo.svg' alt="New York Time logo.">
+               <form class="selection-form">
+                  <p class="selection">Choose a section:</p>
+                  <select class="dropdown-content">
+                    <option class="holder" value="sections">Sections ...</option>
+                    <option value="Home">Home</option>
+                    <option value="Arts">Arts</option>
+                    <option value="Business">Business</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Technology">Technology</option>
+                    <option value="fashion">Fashion</option>
+                  </select>
+               </form>
+            </section>
+         </header>
 
-  <section class="Main">
-    <img src="images/nyt-logo.svg">
-    <h1>Choose a section:</h1>
-  </section>
+         <section class='loading'>
+         </section>
 
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Sections...</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
+         <section>
+           <ul class="stories"></ul>
+         </section>
 
-  </section>
+</section>
     
 
   <footer id="footer"> 
@@ -38,6 +49,8 @@
       <h3>&copy; Copyright 2017 INSTANEWS</h3>
     </div>
  </footer>
+
+  <script src="JavaScript/scripts.js"></script>
 
   </body>
 

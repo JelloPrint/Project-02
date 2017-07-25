@@ -1,0 +1,20 @@
+HomePage
+
+JS: need to have a function for everystep 
+
+1. click on section to unviel topics
+2. prevent default
+3. select topic
+4. Header slides up
+5. loader icon pops up
+6. close icon animation
+7. append stories
+8.loader goes away
+9. empty out stories 
+
+
+SCSS:
+make header take up the full screen. Hide header for desktop verison auto-height
+
+method . filter to remove img
+console.log

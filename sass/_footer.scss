@@ -1,0 +1,20 @@
+footer {
+	color: #c2c2c2;
+	height: 10vh;
+	text-align: center;
+
+	p {
+		font-size: .7rem;
+		line-height: 10px;
+	}
+
+	@include desktop {
+		padding-left: 38px;
+		text-align: left;
+	}
+
+	span {
+		text-transform: uppercase;
+	}
+
+}

@@ -1,0 +1,19 @@
+a {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 420px;
+}
+
+p {
+	line-height: 40px;
+}
+
+body {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: $font-family;
+	font-size: $font-size;
+  text-align: center;
+  
+}
